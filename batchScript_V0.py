@@ -12,6 +12,7 @@ import pandas as pd
 import os
 #dat=pd.read_csv("D:\\Geodetic_Personal\\geodetic_field\\gravity\\Data_processing\\Data.csv",skiprows=20,delimiter='\t')
 
+#this function creates a job file using the name of loop, station, gravity values and standard deviation of the station
 def make_job(nam,st,g,sd):
     with open ('loops/'+nam+'.job','w') as f1:
         f1.write ('gradj <<!\n'+'loops\\'+nam+'.redobs'+'\n'+'loops\\'+nam+'.ogradj'+'\n'+'loops\\'+nam+'.resgradj'+'\n'+'loops\\'+nam+'.tiegradj'+'\n'+'24 f 0.5'+'\n'+'1'+'\n'+str(st)+' '+str(g)+' '+str(sd)+'\n'+'!')
